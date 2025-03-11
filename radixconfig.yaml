@@ -1,0 +1,16 @@
+
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: rihag-presentation
+spec:
+  environments:
+  - name: dev
+    build:
+      from: main
+  components:
+  - name: web
+    ports:
+    - name: http
+      port: 3000
+    publicPort: http	
