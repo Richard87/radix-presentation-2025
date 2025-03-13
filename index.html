@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="dist/reveal.css">
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="css/equinor.css" />
+    <link rel="stylesheet" href="css/bouvet.css" />
     <!-- <link rel="stylesheet" href="dist/theme/dracula.css" /> -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
 
@@ -27,13 +27,10 @@
                 </section>
                 <section>
                     <h2>Team</h2>
-                    <img class="r-stretch" src="./team-equinor.png" alt="Kubernetes">
+                    <img class="r-stretch" src="./team.png" alt="Kubernetes">
                 </section>
                 <section>
                     <h2>Richard Hagen</h2>
-                    <p>
-                        Consultant from Bouvet
-                    </p>
                     <p>Omnia Radix the last 18 months</p>
                     <p>Kubernetes the last 7 years</p>
                     <img class="r-stretch" src="./richard.png" alt="Bouvet">
@@ -45,8 +42,42 @@
                     <img class="r-stretch" src="./kubernetes.png" alt="Kubernetes">
                     <p>aka. Job Security</p>
                 </section>
+                <section>
+                    <div class="r-stack">
+
+                        <img class="" src="networkpolicy.png" alt="networkpolicy">
+                        <img class="fragment" src="ingress.png" alt="ingress">
+                        <img class="fragment" src="service.png" alt="service">
+                        <img class="fragment" src="deployment.yaml.png" alt="service">
+                    </div>
+                </section>
             </section>
             <section>
+                <section>
+                    <h2>Radix</h2>
+                    <div class="r-stack">
+                        <img src="./radix.png" alt="Radix">
+                        <pre>
+                            <code data-trim data-noescape class="language-yaml">
+                                apiVersion: radix.equinor.com/v1
+                                kind: RadixApplication
+                                metadata:
+                                  name: rihag-demo-app
+                                spec:
+                                  environments:
+                                  - name: dev
+                                    build:
+                                      from: main
+                                  components:
+                                  - name: web
+                                    ports:
+                                    - name: http
+                                      port: 8000
+                                    publicPort: http	
+                              </code>
+                            </pre>
+                    </div>
+                </section>
                 <section data-markdown>
                     <textarea data-template>
 					## Radix
@@ -68,57 +99,37 @@
                     <p>KISS</p>
                 </section>
                 <section>
-                    <h2>Radix COmponents</h2>
-                    <ul>
-                        <li>Radix Web Console</li>
-                        <li>Radix CLI</li>
-                        <li>Radix Github Webhook</li>
-                    </ul>
-                    <ul style="color: var(--secondary-color)">
-                        <li>Radix API</li>
-                        <li>Radix Operator</li>
-                        <li>Radix Pipeline-Runner</li>
-                    </ul>
+                    <img src="/platform.svg" alt="Radix Infrastruktur">
                 </section>
                 <section>
-                    <img src="/platform.svg" alt="Radix Components">
-                </section>
-                <section data-visibility="hidden">
-                    <h2>Extras</h2>
-                    <ul>
-                        <li>Radix Cost Allocation (+API)</li>
-                        <li>Radix Vulnerability Scanner (+API)</li>
-                        <li>Radix Log Api</li>
-                        <li>Lots of other repos and tools (prometheus guard, prometheus proxy, ACR cleanups etc)</li>
-                    </ul>
+                    <img src="/Radix-components.svg" alt="Radix Infrastruktur">
                 </section>
             </section>
             <section>
                 <section>
-                    <pre>
-						<code data-trim data-noescape class="language-yaml">
-							apiVersion: radix.equinor.com/v1
-							kind: RadixApplication
-							metadata:
-							  name: rihag-demo-app
-							spec:
-							  environments:
-							  - name: dev
-							    build:
-							      from: main
-							  components:
-							  - name: web
-							    ports:
-							    - name: http
-							      port: 8000
-							    publicPort: http	
-						  </code>
-						</pre>
+                    <h2>Containere</h2>
+                    <p>A short history of what even is containers?</p>
                 </section>
                 <section>
-                    <img src="/web-console.png" alt="Web Console">
+                    <h2>Containere</h2>
+                    <p>1991 - Linux</p>
+                    <p>2002 - Chroot</p>
+                    <p>2004 - UnionFS</p>
+                    <p>2002 - Namespaces</p>
+                    <p>2008 - Cgroups</p>
+                    <p>2013 - Docker</p>
+                    <p>2014 - Kubernetes</p>
+                    <p>2018 - Radix - Frode Hus</p>
                 </section>
-            </section>
+                <section>
+                    
+                    <pre>
+                        <code data-trim data-noescape class="shell">
+                            # cgexec -g cpu:group1 firefox http://www.redhat.com
+                        </code> 
+                    </pre>
+                </section>
+            </section>  
             <section>
 
                 <section>
@@ -131,16 +142,18 @@
                     <p>And a <em>very</em> supportive chat: <br /><strong>#omnia-radix-support</strong></p>
                 </section>
             </section>
-            <section>
+            <section data-visibility="hidden">
                 <h2>DEMO</h2>
                 <a target="_blank"
-                    href="https://github.com/Richard87/rihag-demo-app">github.com/richard87/rihag-demo-app</a>
+                    href="https://github.com/Richard87/rihag-demo-app">https://github.com/richard87/rihag-demo-app</a>
                 <br /><br /><br /><br />
                 <h4>And remember</h4>
-                <p>Docs: <a target="_blank"
-                        href="https://radix.equinor.com/docs/">https://radix.equinor.com/docs/</a></p>
+                <p>Docs: <a target="_blank" href="https://radix.equinor.com/docs/">https://radix.equinor.com/docs/</a>
+                </p>
                 <p>Slack: <strong>#omnia-radix-support</strong></p>
             </section>
+            <section>
+                <h2>Takk!</h2>
         </div>
     </div>
 
